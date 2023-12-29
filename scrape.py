@@ -47,6 +47,8 @@ def seecsScrape():
             else:
                 program_names.append(program_name)
             
+            if program_name.endswith(' '):
+                program_name = program_name.rstrip()
             tables = soupLink.find_all("table", class_="table table-bordered table-striped")
             for table in tables:
                 rows = table.find_all('tr')
@@ -127,6 +129,8 @@ def smmeScrape():
                 program_names.append(program_name)
             else:
                 program_names.append(program_name)
+            if program_name.endswith(' '):
+                program_name = program_name.rstrip()
             
             tables = soupLink.find_all("table", class_="table table-bordered table-striped")
             for table in tables:
@@ -208,6 +212,8 @@ def s3hScrape():
                 program_names.append(program_name)
             else:
                 program_names.append(program_name)
+            if program_name.endswith(' '):
+                program_name = program_name.rstrip()
             
             tables = soupLink.find_all("table", class_="table table-bordered table-striped")
             for table in tables:
@@ -284,6 +290,8 @@ def nbsScrape():
                 program_names.append(program_name)
             else:
                 program_names.append(program_name)
+            if program_name.endswith(' '):
+                program_name = program_name.rstrip()
             
             tables = soupLink.find_all("table", class_="table table-bordered table-striped")
             for table in tables:
@@ -364,6 +372,8 @@ def scmeScrape():
                 program_names.append(program_name)
             else:
                 program_names.append(program_name)
+            if program_name.endswith(' '):
+                program_name = program_name.rstrip()
             
             tables = soupLink.find_all("table", class_="table table-bordered table-striped")
             for table in tables:
@@ -444,6 +454,8 @@ def sceeScrape():
                 program_names.append(program_name)
             else:
                 program_names.append(program_name)
+            if program_name.endswith(' '):
+                program_name = program_name.rstrip()
             
             tables = soupLink.find_all("table", class_="table table-bordered table-striped")
             for table in tables:
@@ -524,7 +536,9 @@ def igisScrape():
                 program_names.append(program_name)
             else:
                 program_names.append(program_name)
-            
+            if program_name.endswith(' '):
+                program_name = program_name.rstrip()
+            print(program_name)
             tables = soupLink.find_all("table", class_="table table-bordered table-striped")
             for table in tables:
                 rows = table.find_all('tr')
@@ -604,6 +618,8 @@ def snsScrape():
                 program_names.append(program_name)
             else:
                 program_names.append(program_name)
+            if program_name.endswith(' '):
+                program_name = program_name.rstrip()
             
             tables = soupLink.find_all("table", class_="table table-bordered table-striped")
             for table in tables:
@@ -684,6 +700,8 @@ def asabScrape():
                 program_names.append(program_name)
             else:
                 program_names.append(program_name)
+            if program_name.endswith(' '):
+                program_name = program_name.rstrip()
             
             tables = soupLink.find_all("table", class_="table table-bordered table-striped")
             for table in tables:
@@ -764,7 +782,8 @@ def sadaScrape():
                 program_names.append(program_name)
             else:
                 program_names.append(program_name)
-            
+            if program_name.endswith(' '):
+                program_name = program_name.rstrip()
             tables = soupLink.find_all("table", class_="table table-bordered table-striped")
             for table in tables:
                 rows = table.find_all('tr')
@@ -791,4 +810,4 @@ def sadaScrape():
                         f.write('INSERT IGNORE INTO subjects (suid, name, code, degree) VALUES (UUID_TO_BIN(UUID()), "' + 
                                 row[2] + '", "' + row[1] + '","' + program_name + '");' )
                         f.write('\n')
-sadaScrape()
+seecsScrape()
